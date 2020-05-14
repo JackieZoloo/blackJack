@@ -198,7 +198,7 @@ function standButton(){
     if(dTotal > 21) {
         message.innerText = "Dealer busted";
         displayMoney.innerText = "";
-        money += bettedAmount;
+        money = money + (bettedAmount * 2);
         playerMoney.innerText = money;
 
     } else if(pTotal > dTotal && pTotal <= 21){
