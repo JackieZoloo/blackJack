@@ -9,17 +9,22 @@ const dealerScore = document.getElementById("dScore");
 const playerCards = document.getElementById("playerCards");
 const dealerCards = document.getElementById("dealerCards");
 let message = document.getElementById("playerWin");
+const bet = document.getElementById("bet");
+const displayMoney = document.getElementById("bettedMoney");
+let playerMoney = document.getElementById("money");
 let dealerHand = [];
 let playerHand = [];
 let pTotal = 0;
 let dTotal = 0;
 hit.disabled = false;
+let money = 500;
+let bettedAmount = 0;
 
 // events 
 start.addEventListener("click", randomCards);
 hit.addEventListener("click", hitCard);
 stand.addEventListener("click", standButton);
-
+bet.addEventListener("click", getBetMoney);
 // Generate Rondam cards
 const suits = ["S", "D", "C", "H"];
 const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
@@ -48,6 +53,21 @@ cards = [];
            cards.push(card);                                    // Creating card object to cards array.
         })
     })
+
+
+    // function myFunction() {
+    //     var x = document.getElementById("myNumber").value;
+    //     document.getElementById("demo").innerHTML = x;
+    //   }
+// getting the bet amount 
+function getBetMoney(){
+    bettedAmount = document.getElementById("inputMoney").value;
+    displayMoney.innerText = bettedAmount;
+    document.getElementById("inputMoney").value = "";
+    money -= bettedAmount;
+    playerMoney.innerText = money;
+
+}
 
 
 //Generating Random Cards
@@ -100,6 +120,8 @@ function checkScore(){
     }
     if(pTotal === 21) {
         playerWin.innerHTML ="BlackJack";
+        money = money + (bettedAmount * 2);
+        playerMoney.innerText = money;
         hit.disabled = true;
         stand.disabled = true;
     }
@@ -109,6 +131,8 @@ function checkScore(){
     }
     if(dTotal === 21) {
         playerWin.innerHTML ="Dealer BlackJack";
+        money -= bettedAmount;
+        playerMoney.innerText = money;
         hit.disabled = true;
         stand.disabled = true;
     }
@@ -130,7 +154,7 @@ function hitCard(){
 
     playerHand.forEach(function(card){
         if(card.value === "A") {
-            if(pTotal < 11){
+            if(pTotal < 21){
                 card.scorec = 11;
             } else {
                 card.score = 1;
@@ -142,9 +166,13 @@ function hitCard(){
     playerScore.innerHTML = pTotal;
     if(pTotal > 21) {
         message.innerText = "You busted";
+        displayMoney.innerText = "";
+        playerMoney.innerText = money;
         hit.disabled = true;
     } else if(pTotal === 21) {
         message.innerText = "You Won";
+        money = money + (bettedAmount * 2);
+        playerMoney.innerText = money;
         hit.disabled = true;
     }
     console.log(playerHand);
@@ -158,9 +186,9 @@ function standButton(){
     let newCard = document.createElement("img");
     newCard.setAttribute("src", cards[randomNum].imagePath);
     dealerCards.appendChild(newCard);
-    playerHand.forEach(function(card){
+    dealerHand.forEach(function(card){
         if(card.value === "A") {
-            if(pTotal < 11){
+            if(dTotal <= 21){
                 card.scorec = 11;
             } else {
                 card.score = 1;
@@ -173,8 +201,15 @@ function standButton(){
     }
     if(dTotal > 21) {
         message.innerText = "Dealer busted";
+        displayMoney.innerText = "";
+        money = money + (bettedAmount * 2);
+        playerMoney.innerText = money;
+
     } else if(pTotal > dTotal && pTotal <= 21){
         message.innerText = "You Won";
+        displayMoney.innerText = "";
+        money -= bettedAmount;
+        playerMoney.innerText = money;
     } else {
         message.innerText = "Dealer Won";
     }

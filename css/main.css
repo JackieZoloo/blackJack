@@ -26,6 +26,17 @@ h4 {
     background-color: black;
     color: white;
 }
+h4 {
+    display: inline;
+    margin: 50px;
+}
+h3 {
+    color: white;
+}
+#playerWin {
+    font-size: 24px;
+    color: blue;
+}
 .buttons {
     text-align: center;
 }
@@ -49,4 +60,25 @@ h4 {
     background-color: #34ebe2;
     color: white;
     font-size: 1em;
+}
+label {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    border-radius: 20px;
+}
+#bet {
+    border-radius: 50px;
+    background-color: red;
+    width: 60px;
+    height: 30px;
+    font-size: 18px;
+    color: white;
+}
+input {
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+
 }
