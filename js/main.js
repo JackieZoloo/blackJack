@@ -88,11 +88,13 @@ function clearContent() {
     dTotal = 0;
     hit.disabled = false;
     stand.diabled = false;
+   
 } 
 // start the game when start button is clicked
 function startGame(){
     playerCards.innerHTML = "";
     message.innerText = " ";
+    
     for( i = 0; i < playerHand.length; i++) {
         let firstCard = document.createElement("img");
         firstCard.setAttribute("src", playerHand[i].imagePath);
@@ -205,6 +207,7 @@ function standButton(){
         displayMoney.innerText = "";
         money = money + (bettedAmount * 2);
         playerMoney.innerText = money;
+        displayMoney.innerText = "";
 
     } else if(pTotal > dTotal && pTotal <= 21){
         message.innerText = "You Won";
@@ -213,5 +216,6 @@ function standButton(){
         playerMoney.innerText = money;
     } else {
         message.innerText = "Dealer Won";
+        displayMoney.innerText = "";
     }
 }
