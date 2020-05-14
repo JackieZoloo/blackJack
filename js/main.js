@@ -53,13 +53,8 @@ cards = [];
            cards.push(card);                                    // Creating card object to cards array.
         })
     })
-
-
-    // function myFunction() {
-    //     var x = document.getElementById("myNumber").value;
-    //     document.getElementById("demo").innerHTML = x;
-    //   }
-// getting the bet amount 
+    
+    
 function getBetMoney(){
     bettedAmount = document.getElementById("inputMoney").value;
     displayMoney.innerText = bettedAmount;
@@ -87,8 +82,7 @@ function clearContent() {
     pTotal = 0;
     dTotal = 0;
     hit.disabled = false;
-    stand.diabled = false;
-   
+    stand.disabled = false;
 } 
 // start the game when start button is clicked
 function startGame(){
@@ -143,9 +137,7 @@ function checkScore(){
 
     console.log(pTotal);
     console.log(dTotal);
-    // pleyerScore.innerHTML = pTotal;
 }
-// hit card funtion 
 
 function hitCard(){
     let randomNum = Math.floor(Math.random() * cards.length);
@@ -174,6 +166,7 @@ function hitCard(){
         stand.disabled = true;
     } else if(pTotal === 21) {
         message.innerText = "You Won";
+        displayMoney.innerText = "";
         money = money + (bettedAmount * 2);
         playerMoney.innerText = money;
         hit.disabled = true;
@@ -204,9 +197,6 @@ function standButton(){
     }
     if(dTotal > 21) {
         message.innerText = "Dealer busted";
-        displayMoney.innerText = "";
-        money = money + (bettedAmount * 2);
-        playerMoney.innerText = money;
         displayMoney.innerText = "";
 
     } else if(pTotal > dTotal && pTotal <= 21){
