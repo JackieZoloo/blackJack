@@ -23,3 +23,4 @@ To play this game, click [here](https://jackiezoloo.github.io/blackJack/)
 1. Add more styling like showing some chips etc.
 2. Allow users to split his/her beds.
 3. Add multiple players game.
+4. Add some sounds.
