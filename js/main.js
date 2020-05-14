@@ -1,4 +1,4 @@
-// Declaring all the variables
+/*--- Declaring all the variables ---*/
 
 const start = document.getElementById("buttonStart");
 const hit = document.getElementById("buttonHit");
@@ -21,7 +21,7 @@ stand.disabled = false;
 let money = 500;
 let bettedAmount = 0;
 
-// events 
+/*--- events ---*/
 start.addEventListener("click", randomCards);
 hit.addEventListener("click", hitCard);
 stand.addEventListener("click", standButton);
@@ -66,7 +66,7 @@ function getBetMoney(){
 }
 
 
-//Generating Random Cards
+/*--- Generating Random Cards ---*/
 
 function randomCards(){
     clearContent();
@@ -85,7 +85,7 @@ function clearContent() {
     hit.disabled = false;
     stand.disabled = false;
 } 
-// start the game when start button is clicked
+/*--- start the game when start button is clicked ---*/
 function startGame(){
     playerCards.innerHTML = "";
     message.innerText = " ";
@@ -108,7 +108,7 @@ function startGame(){
     console.log(playerHand);
 }
 
-// update both scores
+/*--- update both scores ---*/
 
 function checkScore(){
     pTotal = 0;
@@ -175,7 +175,7 @@ function hitCard(){
     console.log(playerHand);
 }
 
-// stand button clicked 
+/*--- stand button clicked ---*/ 
 function standButton(){
     while(dTotal < 18) {
     let randomNum = Math.floor(Math.random() * cards.length);
