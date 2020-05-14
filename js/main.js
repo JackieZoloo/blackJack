@@ -169,6 +169,7 @@ function hitCard(){
         displayMoney.innerText = "";
         playerMoney.innerText = money;
         hit.disabled = true;
+        stand.disabled = true;
     } else if(pTotal === 21) {
         message.innerText = "You Won";
         money = money + (bettedAmount * 2);
