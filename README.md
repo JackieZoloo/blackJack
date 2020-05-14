@@ -16,7 +16,7 @@ Blackjack is a card game the object of which is to be dealt cards having a highe
 ## Getting Started
 
 
-To play this game, click [here](url)
+To play this game, click [here](https://jackiezoloo.github.io/blackJack/)
 
 ## Next Step
 

@@ -87,7 +87,7 @@ function clearContent() {
     pTotal = 0;
     dTotal = 0;
     hit.disabled = false;
-    stand.diabled = false;
+    stand.disabled = false;
 } 
 // start the game when start button is clicked
 function startGame(){
