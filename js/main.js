@@ -87,12 +87,7 @@ function clearContent() {
     pTotal = 0;
     dTotal = 0;
     hit.disabled = false;
-<<<<<<< HEAD
     stand.disabled = false;
-=======
-    stand.diabled = false;
-   
->>>>>>> master
 } 
 // start the game when start button is clicked
 function startGame(){
