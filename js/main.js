@@ -17,6 +17,7 @@ let playerHand = [];
 let pTotal = 0;
 let dTotal = 0;
 hit.disabled = false;
+stand.disabled = false;
 let money = 500;
 let bettedAmount = 0;
 
