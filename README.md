@@ -3,7 +3,7 @@ Blackjack is a card game the object of which is to be dealt cards having a highe
 
 ## Screenshot
 
-![BlackJack Game ScreenShot](images/screenshot.png)
+![BlackJack Game ScreenShot](./images/screenShot.png)
 
 
 
